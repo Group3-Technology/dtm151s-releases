@@ -39,12 +39,35 @@ in-house instrument software, and only needed once.
 
 1. Unzip `G3_DTM151_Control-macos.zip` (double-click it in Finder).
 2. Drag **`G3_DTM151_Control.app`** to your **Applications** folder.
-3. First launch: **right-click (or Control-click) the app → Open**, then
-   click **Open** in the dialog. A plain double-click is blocked by
-   Gatekeeper on unsigned apps; right-click → Open authorises it once.
-4. Afterwards, open it normally.
+3. Approve it on first launch — **the steps depend on your macOS version**,
+   because Apple changed this in macOS 15. Check yours under the Apple menu
+   → **About This Mac**.
 
-If macOS still refuses after a right-click → Open, clear the quarantine flag:
+<details open>
+<summary><b>macOS 15 (Sequoia) or later — including macOS 26</b></summary>
+
+1. Double-click the app. macOS blocks it with *"Apple could not verify
+   … is free of malware."* Click **Done**. This first attempt is
+   required — it's what makes the button below appear.
+2. Go to **System Settings → Privacy & Security**, scroll to **Security**.
+3. Next to *"G3_DTM151_Control was blocked to protect your Mac"*, click
+   **Open Anyway** → confirm → authenticate.
+
+</details>
+
+<details>
+<summary><b>macOS 14 (Sonoma) or earlier</b></summary>
+
+**Right-click (or Control-click) the app → Open**, then click **Open** in
+the dialog. Apple removed this route in macOS 15, so it won't work on
+newer systems.
+
+</details>
+
+4. Afterwards, open it normally. You only approve it once.
+
+Prefer the Terminal? This works on every macOS version and replaces the
+whole procedure:
 
 ```bash
 xattr -dr com.apple.quarantine "/Applications/G3_DTM151_Control.app"
